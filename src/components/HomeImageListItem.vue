@@ -41,7 +41,7 @@
         },
         methods: {
             openMenu() {
-               return this.showMenu = !this.showMenu
+                return this.showMenu = !this.showMenu
             }
         }
     }
@@ -54,12 +54,12 @@
     .post {
         width: 100%;
         position: relative;
-        margin-bottom: 10px;
         page-break-inside: avoid;
         break-inside: avoid;
         box-shadow: 0 3px 5px rgba(0,0,0,.2);
         border-radius: 10px;
         transition: .2s ease-in-out;
+        margin-bottom: 10px;
     }
 
     .image {

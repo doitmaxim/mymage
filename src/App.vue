@@ -7,20 +7,34 @@
     </transition>
     <div id="nav">
       <router-link to="/">
-        <img src="./assets/svg/home.svg">
+        <svg-icon class="nav-svg" name="home" :width="24" :height="24" />
       </router-link>
       <router-link to="/search">
-        <img src="./assets/svg/search.svg">
+        <svg-icon class="nav-svg" name="search" :width="24" :height="24" />
       </router-link>
       <router-link to="/profile">
-        <img src="./assets/svg/like.svg">
+        <svg-icon class="nav-svg" name="bookmark" :width="24" :height="24" />
       </router-link>
       <router-link to="/profile">
-        <img src="./assets/svg/user.svg">
+        <svg-icon class="nav-svg" name="user" :width="24" :height="24" />
       </router-link>
     </div>
   </div>
 </template>
+
+<script>
+import SvgIcon from './components/SvgIcon'
+
+
+export default {
+
+  components: {
+    SvgIcon
+  }
+
+}
+</script>
+
 
 <style lang="scss">
 @import './assets/styles/vars.scss';
@@ -40,6 +54,11 @@ body {
   -moz-osx-font-smoothing: grayscale;
   padding-top: 10px;
   font-size: 14px;
+}
+.nav-svg {
+
+  fill: $text;
+
 }
 #nav {
   position: fixed;
