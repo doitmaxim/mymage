@@ -1,47 +1,48 @@
 <template>
     <div class="post"> 
         <img
-        class="image"
-        :src="item.largeImageURL"
+            class="image"
+            :src="item.webformatURL"
         >
         <div class="image-caption">
-        <a href="#" class="user">
-            @{{item.user}}
-        </a>
-        <div 
-            class="menu-btn"
-            @click="openMenu()"
-        >
-            <span class="menu-dot"></span>
-            <span class="menu-dot"></span>
-            <span class="menu-dot"></span>
-        </div>
-        </div>
-        <div 
-            class="menu"
-            :class="{ 'menu-active' : showMenu }"
-        >
-            <a class="menu-link" href="#">Save</a>
-            <a class="menu-link" href="#">Download image</a>
-            <a class="menu-link" href="#">Report</a>
+            <a href="#" class="user">
+                @{{item.user}}
+            </a>
+            <div 
+                class="menu-btn"
+                @click="openHomeImageModal"
+            >
+                <svg-icon name="dots" :width="18" :height="18"/>
+            </div>
         </div>
     </div>
 </template> 
 
 <script>
+    import { ModalBus } from '../eventBus'
+    import HomeImageModal from '../components/modals/HomeImageModal'
+
+    import SvgIcon from './SvgIcon'
 
     export default {
-        data() {
-            return {
-                showMenu: false
-            }
+        components: {
+            SvgIcon
         },
         props: {
             item: Object
         },
         methods: {
-            openMenu() {
-                return this.showMenu = !this.showMenu
+            openHomeImageModal() {
+                const props = {
+                    inner: 'Передаю пропс в модалку',
+                    user: this.$props.item.user,
+                    imageUrl: this.$props.item.largeImageURL
+                }
+                ModalBus.$emit('open', {
+                    component: HomeImageModal,
+                    title: 'Choose action',
+                    props
+                })
             }
         }
     }
@@ -63,7 +64,7 @@
     }
 
     .image {
-        max-width: 100%;
+        width: 100%;
         display: block;
         border-radius: 10px 10px 0 0;
     }
