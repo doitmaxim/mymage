@@ -37,7 +37,7 @@
 import SvgIcon from '../SvgIcon'
 import axios from 'axios'
 export default {
-
+    name: 'HomeImageModal',
     props: {
         inner: String,
         user: String,

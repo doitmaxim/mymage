@@ -10,7 +10,7 @@
             </a>
             <div 
                 class="menu-btn"
-                @click="openHomeImageModal"
+                @click="showModal({componentName: 'HomeImageModal', title: 'Заголовок модалки'})"
             >
                 <svg-icon name="dots" :width="18" :height="18"/>
             </div>
@@ -19,33 +19,21 @@
 </template> 
 
 <script>
-    import { ModalBus } from '../eventBus'
-    import HomeImageModal from '../components/modals/HomeImageModal'
+import SvgIcon from './SvgIcon'
 
-    import SvgIcon from './SvgIcon'
-
-    export default {
-        components: {
-            SvgIcon
-        },
-        props: {
-            item: Object
-        },
-        methods: {
-            openHomeImageModal() {
-                const props = {
-                    inner: 'Передаю пропс в модалку',
-                    user: this.$props.item.user,
-                    imageUrl: this.$props.item.largeImageURL
-                }
-                ModalBus.$emit('open', {
-                    component: HomeImageModal,
-                    title: 'Выберите действие',
-                    props
-                })
-            }
+export default {
+    components: {
+        SvgIcon
+    },
+    props: {
+        item: Object
+    },
+    methods: {
+        showModal(data) {
+            this.$store.commit('modal/showModal', data)
         }
     }
+}
 
 </script>
 <style lang="scss">

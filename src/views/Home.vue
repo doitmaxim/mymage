@@ -37,12 +37,12 @@
 
     computed: {
       imagesList() {
-        return this.$store.getters['aLLimages'];
+        return this.$store.getters['homeimages/homeImages']
       }
     },
 
     mounted() {
-      this.$store.dispatch('getImages')
+      this.$store.dispatch('homeimages/loadHomeImages')
     },
 
     methods: {

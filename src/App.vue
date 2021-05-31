@@ -35,7 +35,6 @@
 </template>
 
 <script>
-import { ModalBus } from './eventBus'
 import ModalRoot from './components/ModalRoot.vue'
 import SvgIcon from './components/SvgIcon'
 
