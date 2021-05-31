@@ -10,8 +10,8 @@
                 </span>
             </a>
             <a class="modal-link"
-                :href="imageUrl" 
-                @click.prevent="downloadImage(imageUrl, 'drugoi.jpg')"
+                :href="image.largeImageURL" 
+                @click.prevent="downloadImage(image.largeImageURL, image.user+'.jpg')"
             >
                 <svg-icon class="modal-link-icon" name="download"/>
                 <span>
@@ -26,9 +26,7 @@
             </a>
 
         </div>
-        {{ inner }}
-        <br>
-        Нажал на меню картинки юзера: <b>@{{ user }} </b>
+        Данные, которые лежат в state.modal.innerProps <b>{{ image }} </b>
     </div>
 
 </template>
@@ -38,13 +36,15 @@ import SvgIcon from '../SvgIcon'
 import axios from 'axios'
 export default {
     name: 'HomeImageModal',
-    props: {
-        inner: String,
-        user: String,
-        imageUrl: String
-    },
     components: {
         SvgIcon
+    },
+    computed: {
+        image() {
+            const innerProps = this.$store.getters['modal/getInnerProps']
+            if (!innerProps) return
+            return innerProps
+        }
     },
     methods: {
         forceDownload(response, title) {

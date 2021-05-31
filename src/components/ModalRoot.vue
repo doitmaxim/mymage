@@ -6,6 +6,7 @@
         >
             <div 
                 class="modal-dialog"
+                @click.stop
             >
                 <div class="modal-header">
                     <div class="modal-title">
@@ -78,7 +79,6 @@ export default {
     background-color: $bg;
     padding: 10px 15px;
     border-radius: 15px 15px 0 0;
-    height: 40%;
     transform: translateY(0%);
     transition: .2s ease-in-out;
 }

@@ -10,7 +10,7 @@
             </a>
             <div 
                 class="menu-btn"
-                @click="showModal({componentName: 'HomeImageModal', title: 'Заголовок модалки'})"
+                @click="showModal({componentName: 'HomeImageModal', title: 'Заголовок модалки', innerProps: item})"
             >
                 <svg-icon name="dots" :width="18" :height="18"/>
             </div>
