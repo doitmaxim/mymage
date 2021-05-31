@@ -69,6 +69,8 @@ export default {
     padding: 10px 15px;
     border-radius: 15px 15px 0 0;
     height: 40%;
+    transform: translateY(0%);
+    transition: .2s ease-in-out;
 }
 
 .modal-header {
@@ -94,13 +96,10 @@ export default {
 
 
 .modal-enter-active, .modal-leave-active {
-    transition: 0.5s;
-}
-.modal-enter, .modal-leave-to {
-    opacity: 0;
+    transition: .2s ease-in-out;
 }
 .modal-enter .modal-dialog, .modal-leave-to .modal-dialog {
-    transform: translateY(-20%);
+    transform: translateY(100%);
 }
 
 </style>

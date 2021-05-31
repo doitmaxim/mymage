@@ -2,7 +2,7 @@
   <div class="home">
     <div class="images-list">
       <masonry
-        :cols="2"
+        :cols="{default: 5,1440: 4, 1000: 3, 700: 2}"
         :gutter="10"
       >
 
@@ -37,7 +37,7 @@
 
     computed: {
       imagesList() {
-        return this.$store.getters['images'];
+        return this.$store.getters['aLLimages'];
       }
     },
 

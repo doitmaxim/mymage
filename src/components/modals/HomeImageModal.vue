@@ -6,7 +6,7 @@
             <a href="#" class="modal-link">
                 <svg-icon class="modal-link-icon" name="bookmark-modal"/>
                 <span>
-                    Save
+                    Сохранить
                 </span>
             </a>
             <a class="modal-link"
@@ -15,7 +15,13 @@
             >
                 <svg-icon class="modal-link-icon" name="download"/>
                 <span>
-                    Download
+                    Скачать
+                </span>
+            </a>
+            <a href="#" class="modal-link modal-link--repot">
+                <svg-icon class="modal-link-icon" name="warning"/>
+                <span>
+                    Пожаловаться
                 </span>
             </a>
 
@@ -78,11 +84,20 @@ export default {
     color: $text;
     text-decoration: none;
     font-size: 16px;
+    margin: 5px 0;
 }
 
 .modal-link-icon {
     margin-right: 5px;
     fill: $text;
+}
+
+.modal-link--repot {
+    color: $report;
+
+    .modal-link-icon {
+        fill: $report;
+    }
 }
 
 </style>

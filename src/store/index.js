@@ -25,12 +25,12 @@ Vue.use(Vuex)
 // }
 
 const state = {
-  images: []
+  aLLimages: []
 }
 
 const mutations = {
-  SET_IMAGES(state, images) {
-    state.images = images
+  SET_IMAGES(state, aLLimages) {
+    state.aLLimages = aLLimages
   }
 }
 
@@ -44,7 +44,7 @@ const actions = {
 }
 
 const getters = {
-  images: state => state.images
+  aLLimages: state => state.aLLimages
 }
 
 export default new Vuex.Store({

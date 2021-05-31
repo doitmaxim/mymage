@@ -40,7 +40,7 @@
                 }
                 ModalBus.$emit('open', {
                     component: HomeImageModal,
-                    title: 'Choose action',
+                    title: 'Выберите действие',
                     props
                 })
             }
