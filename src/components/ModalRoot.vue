@@ -76,6 +76,7 @@ export default {
 }
 .modal-dialog {
     width: 100%;
+    margin: 0 auto;
     background-color: $bg;
     padding: 10px 15px;
     border-radius: 15px 15px 0 0;
@@ -105,4 +106,12 @@ export default {
 .modal-enter .modal-dialog, .modal-leave-to .modal-dialog {
     transform: translateY(100%);
 }
+
+
+@media (min-width: 768px) {
+  .modal-dialog {
+      width: 50%;
+  }
+}
+
 </style>

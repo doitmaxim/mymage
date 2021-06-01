@@ -18,15 +18,19 @@
                     Скачать
                 </span>
             </a>
+            <a href="#" class="modal-link">
+                <svg-icon class="modal-link-icon" name="sendimage"/>
+                <span>
+                    Поделиться
+                </span>
+            </a>
             <a href="#" class="modal-link modal-link--repot">
                 <svg-icon class="modal-link-icon" name="warning"/>
                 <span>
                     Пожаловаться
                 </span>
             </a>
-
         </div>
-        Данные, которые лежат в state.modal.innerProps <b>{{ image }} </b>
     </div>
 
 </template>
